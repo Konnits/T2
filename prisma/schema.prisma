@@ -16,7 +16,7 @@ model personajes {
     fecha_nacimiento DateTime @db.Date
     objeto String? @db.VarChar(30)
     karts karts[]
-    trabajos persona_tiene_trabajo[]
+    trabajos personaje_tiene_trabajo[]
     habita persona_habita_reino[]
 }
 
@@ -33,14 +33,16 @@ model trabajos {
     id Int @id @default(autoincrement())
     descripcion String? @db.VarChar(45)
     sueldo Int
-    persona_trabajo persona_tiene_trabajo[]
+    persona_trabajo personaje_tiene_trabajo[]
 }
 
-model persona_tiene_trabajo {
+model personaje_tiene_trabajo {
     id_trabajo Int
     id_personaje Int
     trabajo trabajos @relation(fields: [id_trabajo], references: [id], onDelete: Cascade, onUpdate: Cascade)
     personajes personajes @relation(fields: [id_personaje], references: [id], onDelete: Cascade, onUpdate: Cascade)
+    fecha_inicio DateTime
+    fecha_termino DateTime?
     @@id([id_personaje, id_trabajo])
 }
 

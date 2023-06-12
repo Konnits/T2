@@ -52,7 +52,7 @@ const getTrabajos = async (req, res) => {
 }
 
 const insertTrabajo = async (req, res) => {
-    const { descripcion, sueldo } = req.body
+    const { descripcion, sueldo } = req.query
 
     if(!sueldo){
         res.status(400).json({error: 'Missing sueldo parameter'})
@@ -81,7 +81,7 @@ const insertTrabajo = async (req, res) => {
 
 const updateTrabajo = async (req, res) => {
     const { id } = req.params
-    const { descripcion, sueldo } = req.body
+    const { descripcion, sueldo } = req.query
 
     if(!id){
         res.status(400).json({error: 'Missing id parameter'})

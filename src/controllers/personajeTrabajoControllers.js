@@ -118,9 +118,9 @@ const insertPersonajeTrabajo = async (req, res) => {
         return
     }
 
-    const personaje = await prisma.personaje.findUnique({
+    const personaje = await prisma.personajes.findUnique({
         where: {
-            id_personaje: parseInt(id_personaje)
+            id: parseInt(id_personaje)
         }
     })
 
@@ -129,9 +129,9 @@ const insertPersonajeTrabajo = async (req, res) => {
         return
     }
 
-    const trabajo = await prisma.trabajo.findUnique({
+    const trabajo = await prisma.trabajos.findUnique({
         where: {
-            id_trabajo: parseInt(id_trabajo)
+            id: parseInt(id_trabajo)
         }
     })
 
@@ -142,8 +142,10 @@ const insertPersonajeTrabajo = async (req, res) => {
 
     const personajeTrabajoExists = await prisma.personaje_tiene_trabajo.findUnique({
         where: {
-            id_trabajo: parseInt(id_trabajo),
+            id_personaje_id_trabajo : {
+                id_trabajo: parseInt(id_trabajo),
             id_personaje: parseInt(id_personaje)
+            }
         }
     })
 
@@ -202,9 +204,9 @@ const updatePersonajeTrabajo = async (req, res) => {
         return
     }
 
-    const personaje = await prisma.personaje.findUnique({
+    const personaje = await prisma.personajes.findUnique({
         where: {
-            id_personaje: parseInt(id_personaje)
+            id: parseInt(id_personaje)
         }
     })
 
@@ -213,9 +215,9 @@ const updatePersonajeTrabajo = async (req, res) => {
         return
     }
 
-    const trabajo = await prisma.trabajo.findUnique({
+    const trabajo = await prisma.trabajos.findUnique({
         where: {
-            id_trabajo: parseInt(id_trabajo)
+            id: parseInt(id_trabajo)
         }
     })
 
@@ -273,9 +275,9 @@ const deletePersonajeTrabajo = async (req, res) => {
         return
     }
 
-    const personaje = await prisma.personaje.findUnique({
+    const personaje = await prisma.personajes.findUnique({
         where: {
-            id_personaje: parseInt(id_personaje)
+            id: parseInt(id_personaje)
         }
     })
 
@@ -284,13 +286,13 @@ const deletePersonajeTrabajo = async (req, res) => {
         return
     }
 
-    const trabajo = await prisma.trabajo.findUnique({
+    const trabajo = await prisma.trabajos.findUnique({
         where: {
-            id_trabajo: parseInt(id_trabajo)
+            id: parseInt(id_trabajo)
         }
     })
 
-    if(!trabajo){
+    if(!trabajo){   
         res.status(204).json({error: 'Trabajo not found'})
         return
     }
