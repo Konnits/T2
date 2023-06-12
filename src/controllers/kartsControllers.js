@@ -99,7 +99,11 @@ const insertKart = async (req, res) => {
                 id: parseInt(id_personaje)
             }
         })
+
+        console.log("2")
+
         if(!personaje){
+            console.log("Id personaje not found")
             res.status(204).json({error: 'Param id_personaje must be a existing id'})
             return
         }

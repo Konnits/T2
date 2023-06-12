@@ -127,7 +127,7 @@ const updateTrabajo = async (req, res) => {
 }
 
 const deleteTrabajo = async (req, res) => {
-    const { id } = req.params
+    const { id } = req.query
 
     if(!id){
         res.status(400).json({error: 'Missing id parameter'})
