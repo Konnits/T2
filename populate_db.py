@@ -179,34 +179,15 @@ diplomacias = [
 #     print(response.content)
 #     print(response.json())
 
-url = "http://localhost:3000/api/reinos"
-for nombre, ubicacion, superficie in reinos:
+# url = "http://localhost:3000/api/reinos"
+# for nombre, ubicacion, superficie in reinos:
 
-    print(f"Insertando {nombre}, {ubicacion}, {superficie}")
-
-    data = {
-        "nombre" : nombre,
-        "ubicacion" : ubicacion,
-        "superficie" : superficie
-    }
-
-    response = requests.post(
-        url = url,
-        params = data
-    )
-
-    print(response.json())
-
-# url = "http://localhost:3000/personaje_habita_reino"
-# for id_personaje, id_reino, fecha_registro, es_gobernante in personaje_habita_reino:
-
-#     print(f"Insertando {id_personaje}, {id_reino}, {fecha_registro}, {es_gobernante}")
+#     print(f"Insertando {nombre}, {ubicacion}, {superficie}")
 
 #     data = {
-#         "id_personaje" : id_personaje,
-#         "id_reino" : id_reino,
-#         "fecha_registro" : fecha_registro,
-#         "es_gobernante" : es_gobernante
+#         "nombre" : nombre,
+#         "ubicacion" : ubicacion,
+#         "superficie" : superficie
 #     }
 
 #     response = requests.post(
@@ -216,7 +197,28 @@ for nombre, ubicacion, superficie in reinos:
 
 #     print(response.json())
 
-# url = "http://localhost:3000/defensas"
+url = "http://localhost:3000/api/personaje_habita_reino"
+for id_personaje, id_reino, fecha_registro, es_gobernante in personaje_habita_reino:
+
+    print(f"Insertando {id_personaje}, {id_reino}, {fecha_registro}, {es_gobernante}")
+
+    
+
+    data = {
+        "id_personaje" : id_personaje,
+        "id_reino" : id_reino,
+        "fecha_registro" : fecha_registro,
+        "es_gobernante" : int(es_gobernante)
+    }
+
+    response = requests.post(
+        url = url,
+        params = data
+    )
+
+    print(response.json())
+
+# url = "http://localhost:3000/api/defensas"
 # for defensa in defensas:
 
 #     print(f"Insertando {defensa}")
@@ -232,7 +234,7 @@ for nombre, ubicacion, superficie in reinos:
 
 #     print(response.json())
 
-# url = "http://localhost:3000/reino_tiene_defensa"
+# url = "http://localhost:3000/api/reino_tiene_defensa"
 # for id_reino, id_defensa in reino_tiene_defensa:
 
 #     print(f"Insertando {id_reino}, {id_defensa}")
@@ -249,7 +251,7 @@ for nombre, ubicacion, superficie in reinos:
 
 #     print(response.json())
 
-# url = "http://localhost:3000/diplomacias"
+# url = "http://localhost:3000/api/diplomacias"
 # for id_reino_1, id_reino_2, es_aliado in diplomacias:
 
 #     print(f"Insertando {id_reino_1}, {id_reino_2}, {es_aliado}")

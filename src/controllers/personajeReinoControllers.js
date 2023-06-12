@@ -61,6 +61,8 @@ const insertPersonajeReino = async (req, res) => {
 
     const { id_personaje, id_reino, fecha_registro, es_gobernante } = req.query
 
+    console.log(req.query)
+
     if(!id_personaje){
         res.status(400).json({error: 'Missing id_personaje parameter'})
         return
@@ -101,7 +103,7 @@ const insertPersonajeReino = async (req, res) => {
         return
     }
 
-    const personaje = await prisma.personaje.findUnique({
+    const personaje = await prisma.personajes.findUnique({
         where: {
             id: parseInt(id_personaje)
         }
@@ -112,7 +114,7 @@ const insertPersonajeReino = async (req, res) => {
         return
     }
 
-    const reino = await prisma.reino.findUnique({
+    const reino = await prisma.reinos.findUnique({
         where: {
             id: parseInt(id_reino)
         }
@@ -127,7 +129,7 @@ const insertPersonajeReino = async (req, res) => {
         data: {
             id_personaje: parseInt(id_personaje),
             id_reino: parseInt(id_reino),
-            fecha_registro: parseInt(fecha_registro),
+            fecha_registro: Date.parse(fecha_registro),
             es_gobernante: parseInt(es_gobernante)
         }
     })
