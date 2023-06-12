@@ -65,6 +65,8 @@ const insertKart = async (req, res) => {
         }
     }
 
+    console.log("1")
+
     if(!color){
         res.status(400).json({error: 'Param color is required'})
         return
@@ -75,15 +77,21 @@ const insertKart = async (req, res) => {
         }
     }
 
+    console.log("1")
+
     if(velocidad_maxima && isNaN(parseInt(velocidad_maxima))){
         res.status(400).json({error: 'Param velocidad_maxima must be a number'})
         return
     }
 
+    console.log("1")
+
     if(id_personaje && isNaN(parseInt(id_personaje))){
         res.status(400).json({error: 'Param id_personaje must be a number'})
         return
     }
+
+    console.log("1")
 
     if(id_personaje){
         const personaje = await prisma.personajes.findUnique({
@@ -97,6 +105,8 @@ const insertKart = async (req, res) => {
         }
     }
 
+    console.log("2")
+
     const kart = await prisma.karts.create({
         data: {
             modelo,
@@ -105,7 +115,9 @@ const insertKart = async (req, res) => {
             id_personaje: id_personaje ? parseInt(id_personaje) : undefined
         }
     })
-    res.status(201).json(kart)
+
+    console.log("Kart created successfully")
+    res.status(201).json({message : 'Kart created successfully', kart})
 }
 
 const updateKart = async (req, res) => {
