@@ -223,8 +223,10 @@ const updatePersonajeTrabajo = async (req, res) => {
 
     const prev_personajeTrabajo = await prisma.personaje_tiene_trabajo.findUnique({
         where: {
-            id_trabajo: parseInt(id_trabajo),
-            id_personaje: parseInt(id_personaje)
+            id_personaje_id_trabajo : {
+                id_trabajo: parseInt(id_trabajo),
+                id_personaje: parseInt(id_personaje)
+            }
         }
     })
 
