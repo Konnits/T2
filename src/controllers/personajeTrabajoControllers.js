@@ -291,15 +291,31 @@ const deletePersonajeTrabajo = async (req, res) => {
         }
     })
 
-    if(!trabajo){   
+    if(!trabajo){
         res.status(204).json({error: 'Trabajo not found'})
+        return
+    }
+
+    const personajeTrabajoExists = await prisma.personaje_tiene_trabajo.findUnique({
+        where: {
+            id_personaje_id_trabajo : {
+                id_trabajo: parseInt(id_trabajo),
+                id_personaje: parseInt(id_personaje)
+            }
+        }
+    })
+
+    if(!personajeTrabajoExists){
+        res.status(204).json({error: 'Personaje and Trabajo does not match together'})
         return
     }
 
     const personajeTrabajo = await prisma.personaje_tiene_trabajo.delete({
         where: {
-            id_trabajo: parseInt(id_trabajo),
-            id_personaje: parseInt(id_personaje)
+            id_personaje_id_trabajo : {
+                id_trabajo: parseInt(id_trabajo),
+                id_personaje: parseInt(id_personaje)
+            }
         }
     })
 
