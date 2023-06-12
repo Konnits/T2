@@ -39,7 +39,7 @@ personaje_tiene_trabajo = [
 
 karts = [
     ("A50","verde agua",400,2),
-    ("B45","azul rey",150,),
+    ("B45","azul rey",150,None),
     ("N504","magenta",200,4),
     ("K09","amarillo",530,2),
     ("L2211","anaranjado",390,7),
