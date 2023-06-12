@@ -179,11 +179,6 @@ const updatePersonajeTrabajo = async (req, res) => {
         return
     }
 
-    if(!fecha_inicio){
-        res.status(400).json({error: 'Param fecha_inicio is required'})
-        return
-    }
-
     if(isNaN(parseInt(id_trabajo))){
         res.status(400).json({error: 'Param id_trabajo must be a number'})
         return
@@ -194,7 +189,7 @@ const updatePersonajeTrabajo = async (req, res) => {
         return
     }
 
-    if(isNaN(Date.parse(fecha_inicio))){
+    if(fecha_inicio && isNaN(Date.parse(fecha_inicio))){
         res.status(400).json({error: 'Param fecha_inicio must be a valid date'})
         return
     }

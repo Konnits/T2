@@ -140,24 +140,24 @@ diplomacias = [
 
 #     print(response.json())
     
-url = "http://localhost:3000/api/personaje_tiene_trabajo"
-for id_trabajo, id_personaje, fecha_inicio, fecha_termino in personaje_tiene_trabajo:
+# url = "http://localhost:3000/api/personaje_tiene_trabajo"
+# for id_trabajo, id_personaje, fecha_inicio, fecha_termino in personaje_tiene_trabajo:
 
-    print(f"Insertando {id_trabajo}, {id_personaje}, {fecha_inicio}, {fecha_termino}")
+#     print(f"Insertando {id_trabajo}, {id_personaje}, {fecha_inicio}, {fecha_termino}")
 
-    data = {
-        "id_trabajo" : id_trabajo,
-        "id_personaje" : id_personaje,
-        "fecha_inicio" : fecha_inicio,
-        "fecha_termino" : fecha_termino
-    }
+#     data = {
+#         "id_trabajo" : id_trabajo,
+#         "id_personaje" : id_personaje,
+#         "fecha_inicio" : fecha_inicio,
+#         "fecha_termino" : fecha_termino
+#     }
 
-    response = requests.post(
-        url = url,
-        params = data
-    )
+#     response = requests.post(
+#         url = url,
+#         params = data
+#     )
 
-    print(response.json())
+#     print(response.json())
 
 # url = "http://localhost:3000/api/karts"
 # for modelo, color, velocidad_maxima, id_personaje in karts:
@@ -179,23 +179,23 @@ for id_trabajo, id_personaje, fecha_inicio, fecha_termino in personaje_tiene_tra
 #     print(response.content)
 #     print(response.json())
 
-# url = "http://localhost:3000/reinos"
-# for nombre, ubicacion, superficie in reinos:
+url = "http://localhost:3000/api/reinos"
+for nombre, ubicacion, superficie in reinos:
 
-#     print(f"Insertando {nombre}, {ubicacion}, {superficie}")
+    print(f"Insertando {nombre}, {ubicacion}, {superficie}")
 
-#     data = {
-#         "nombre" : nombre,
-#         "ubicacion" : ubicacion,
-#         "superficie" : superficie
-#     }
+    data = {
+        "nombre" : nombre,
+        "ubicacion" : ubicacion,
+        "superficie" : superficie
+    }
 
-#     response = requests.post(
-#         url = url,
-#         params = data
-#     )
+    response = requests.post(
+        url = url,
+        params = data
+    )
 
-#     print(response.json())
+    print(response.json())
 
 # url = "http://localhost:3000/personaje_habita_reino"
 # for id_personaje, id_reino, fecha_registro, es_gobernante in personaje_habita_reino:
