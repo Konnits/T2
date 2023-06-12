@@ -140,16 +140,54 @@ diplomacias = [
 
 #     print(response.json())
     
-# url = "http://localhost:3000/api/personaje_tiene_trabajo"
-# for id_trabajo, id_personaje, fecha_inicio, fecha_termino in personaje_tiene_trabajo:
+url = "http://localhost:3000/api/personaje_tiene_trabajo"
+for id_trabajo, id_personaje, fecha_inicio, fecha_termino in personaje_tiene_trabajo:
 
-#     print(f"Insertando {id_trabajo}, {id_personaje}, {fecha_inicio}, {fecha_termino}")
+    print(f"Insertando {id_trabajo}, {id_personaje}, {fecha_inicio}, {fecha_termino}")
+
+    data = {
+        "id_trabajo" : id_trabajo,
+        "id_personaje" : id_personaje,
+        "fecha_inicio" : fecha_inicio,
+        "fecha_termino" : fecha_termino
+    }
+
+    response = requests.post(
+        url = url,
+        params = data
+    )
+
+    print(response.json())
+
+# url = "http://localhost:3000/api/karts"
+# for modelo, color, velocidad_maxima, id_personaje in karts:
+
+#     print(f"Insertando {modelo}, {color}, {velocidad_maxima}, {id_personaje}")
 
 #     data = {
-#         "id_trabajo" : id_trabajo,
-#         "id_personaje" : id_personaje,
-#         "fecha_inicio" : fecha_inicio,
-#         "fecha_termino" : fecha_termino
+#         "modelo" : modelo,
+#         "color" : color,
+#         "velocidad_maxima" : velocidad_maxima,
+#         "id_personaje" : id_personaje
+#     }
+
+#     response = requests.post(
+#         url = url,
+#         params = data
+#     )
+
+#     print(response.content)
+#     print(response.json())
+
+# url = "http://localhost:3000/reinos"
+# for nombre, ubicacion, superficie in reinos:
+
+#     print(f"Insertando {nombre}, {ubicacion}, {superficie}")
+
+#     data = {
+#         "nombre" : nombre,
+#         "ubicacion" : ubicacion,
+#         "superficie" : superficie
 #     }
 
 #     response = requests.post(
@@ -159,110 +197,72 @@ diplomacias = [
 
 #     print(response.json())
 
-url = "http://localhost:3000/api/karts"
-for modelo, color, velocidad_maxima, id_personaje in karts:
+# url = "http://localhost:3000/personaje_habita_reino"
+# for id_personaje, id_reino, fecha_registro, es_gobernante in personaje_habita_reino:
 
-    print(f"Insertando {modelo}, {color}, {velocidad_maxima}, {id_personaje}")
+#     print(f"Insertando {id_personaje}, {id_reino}, {fecha_registro}, {es_gobernante}")
 
-    data = {
-        "modelo" : modelo,
-        "color" : color,
-        "velocidad_maxima" : velocidad_maxima,
-        "id_personaje" : id_personaje
-    }
+#     data = {
+#         "id_personaje" : id_personaje,
+#         "id_reino" : id_reino,
+#         "fecha_registro" : fecha_registro,
+#         "es_gobernante" : es_gobernante
+#     }
 
-    response = requests.post(
-        url = url,
-        params = data
-    )
+#     response = requests.post(
+#         url = url,
+#         params = data
+#     )
 
-    print(response.content)
-    print(response.json())
+#     print(response.json())
 
-url = "http://localhost:3000/reinos"
-for nombre, ubicacion, superficie in reinos:
+# url = "http://localhost:3000/defensas"
+# for defensa in defensas:
 
-    print(f"Insertando {nombre}, {ubicacion}, {superficie}")
+#     print(f"Insertando {defensa}")
 
-    data = {
-        "nombre" : nombre,
-        "ubicacion" : ubicacion,
-        "superficie" : superficie
-    }
+#     data = {
+#         "defensa" : defensa
+#     }
 
-    response = requests.post(
-        url = url,
-        params = data
-    )
+#     response = requests.post(
+#         url = url,
+#         params = data
+#     )
 
-    print(response.json())
+#     print(response.json())
 
-url = "http://localhost:3000/personaje_habita_reino"
-for id_personaje, id_reino, fecha_registro, es_gobernante in personaje_habita_reino:
+# url = "http://localhost:3000/reino_tiene_defensa"
+# for id_reino, id_defensa in reino_tiene_defensa:
 
-    print(f"Insertando {id_personaje}, {id_reino}, {fecha_registro}, {es_gobernante}")
+#     print(f"Insertando {id_reino}, {id_defensa}")
 
-    data = {
-        "id_personaje" : id_personaje,
-        "id_reino" : id_reino,
-        "fecha_registro" : fecha_registro,
-        "es_gobernante" : es_gobernante
-    }
+#     data = {
+#         "id_reino" : id_reino,
+#         "id_defensa" : id_defensa
+#     }
 
-    response = requests.post(
-        url = url,
-        params = data
-    )
+#     response = requests.post(
+#         url = url,
+#         params = data
+#     )
 
-    print(response.json())
+#     print(response.json())
 
-url = "http://localhost:3000/defensas"
-for defensa in defensas:
+# url = "http://localhost:3000/diplomacias"
+# for id_reino_1, id_reino_2, es_aliado in diplomacias:
 
-    print(f"Insertando {defensa}")
+#     print(f"Insertando {id_reino_1}, {id_reino_2}, {es_aliado}")
 
-    data = {
-        "defensa" : defensa
-    }
+#     data = {
+#         "id_reino_1" : id_reino_1,
+#         "id_reino_2" : id_reino_2,
+#         "es_aliado" : es_aliado,
+#     }
 
-    response = requests.post(
-        url = url,
-        params = data
-    )
+#     response = requests.post(
+#         url = url,
+#         params = data
+#     )
 
-    print(response.json())
-
-url = "http://localhost:3000/reino_tiene_defensa"
-for id_reino, id_defensa in reino_tiene_defensa:
-
-    print(f"Insertando {id_reino}, {id_defensa}")
-
-    data = {
-        "id_reino" : id_reino,
-        "id_defensa" : id_defensa
-    }
-
-    response = requests.post(
-        url = url,
-        params = data
-    )
-
-    print(response.json())
-
-url = "http://localhost:3000/diplomacias"
-for id_reino_1, id_reino_2, es_aliado in diplomacias:
-
-    print(f"Insertando {id_reino_1}, {id_reino_2}, {es_aliado}")
-
-    data = {
-        "id_reino_1" : id_reino_1,
-        "id_reino_2" : id_reino_2,
-        "es_aliado" : es_aliado,
-    }
-
-    response = requests.post(
-        url = url,
-        params = data
-    )
-
-    print(response.json())
+#     print(response.json())

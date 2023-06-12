@@ -3,7 +3,7 @@ import prisma from '../prismaClient.js'
 const getPersonajeTrabajo = async (req, res) => {
 
     if(Object.keys(req.query).length === 0){
-        const personajeTrabajo = await prisma.personaje_trabajo.findMany()
+        const personajeTrabajo = await prisma.personaje_tiene_trabajo.findMany()
         res.json(personajeTrabajo)
         return
     }
@@ -144,7 +144,7 @@ const insertPersonajeTrabajo = async (req, res) => {
         where: {
             id_personaje_id_trabajo : {
                 id_trabajo: parseInt(id_trabajo),
-            id_personaje: parseInt(id_personaje)
+                id_personaje: parseInt(id_personaje)
             }
         }
     })
