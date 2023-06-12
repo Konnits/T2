@@ -235,8 +235,10 @@ const updatePersonajeTrabajo = async (req, res) => {
 
     const personajeTrabajo = await prisma.personaje_tiene_trabajo.update({
         where: {
-            id_trabajo: parseInt(id_trabajo),
-            id_personaje: parseInt(id_personaje)
+            id_personaje_id_trabajo : {
+                id_trabajo: parseInt(id_trabajo),
+                id_personaje: parseInt(id_personaje)
+            }
         },
         data: {
             fecha_inicio: fecha_inicio ? new Date(fecha_inicio) : prev_personajeTrabajo.fecha_inicio,
