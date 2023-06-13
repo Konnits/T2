@@ -199,8 +199,10 @@ const updatePersonajeReino = async (req, res) => {
 
     const personajeReino = await prisma.personaje_habita_reino.update({
         where: {
-            id_personaje: parseInt(id_personaje),
-            id_reino: parseInt(id_reino)
+            id_personaje_id_reino: {
+                id_personaje: parseInt(id_personaje),
+                id_reino: parseInt(id_reino)
+            }
         },
         data: {
             fecha_registro: fecha_registro ? parseInt(fecha_registro) : prev_personajeReino.fecha_registro,

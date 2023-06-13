@@ -69,7 +69,7 @@ const gobernante = async (req, res) => {
                     }
                 })
 
-                
+                const personajes = await prisma.personajes.findMany()
 
             }
 }
