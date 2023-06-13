@@ -28,6 +28,12 @@ Para la realización de la tarea, se hicieron 2 supuestos:
 - La relación entre **reinos** y **defensas** es de muchos a muchos, por lo que se implementó una nueva tabla **reino_tiene_defensa**.
 - Por dificultades para almacenar el parámetro de **fecha_registro** de la tabla **personaje_habita_reino**, se definió esta columna como una que almacena el instante en el cual se ingresa el registro en la tabla. La justificación de esto es que no se hace mención a su significado, por lo que podemos hacer esto sin salirnos de lo establecido en la tarea.
 
+Por otro lado, se insertaron los datos con un script de python, el cual se encuentra en este repositorio con el nombre **populate_db.py**, es cual se puede ejecutar con el comando
+
+```python
+python populate_db.py
+```
+
 ## EndPoints
 
 Se solicitó la implementación de 4 EndPoints a parte de los **CRUD**. A continuación se especifica su utilización.
