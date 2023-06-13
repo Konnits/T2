@@ -258,8 +258,10 @@ const deleteReinoDefensa = async (req, res) => {
 
     const reinoDefensas = await prisma.reino_tiene_defensa.delete({
         where: {
-            id_reino: parseInt(id_reino),
-            id_defensa: parseInt(id_defensa)
+            id_reino_id_defensa: {
+                id_reino: parseInt(id_reino),
+                id_defensa: parseInt(id_defensa)
+            }
         }
     })
 
