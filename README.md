@@ -38,11 +38,15 @@ Con esta ruta se puede obtener un listado de a lo más 5 personajes que poseen m
 
 ![](https://github.com/Konnits/T2/blob/main/Images/top5personajesconmasfuerza.png)
 
+------
+
 ### (GET) /api/personajeConMasKarts
 
 Con esta ruta se puede obtener el personaje que más autos posee.
 
 ![](https://github.com/Konnits/T2/blob/main/Images/personajeconmaskarts.png)
+
+------
 
 ### (GET) /api/cantidadHabitantes/<id_reino>
 
@@ -50,11 +54,15 @@ Con esta ruta se puede obtener la cantidad de personajes que posee un reino, par
 
 ![](https://github.com/Konnits/T2/blob/main/Images/cantidadhabitantes.png)
 
+------
+
 ### (GET) /api/gobernante/<id_reino>
 
 Con esta ruta se puede obtener un listado de los personajes que son gobernantes de un reino específico. Cuando este parámetro no se especifica, entonces se retornan todos los personajes que son gobernantes de algún reino.
 
 ![](https://github.com/Konnits/T2/blob/main/Images/gobernante.png)
+
+------
 
 ## CRUD
 
