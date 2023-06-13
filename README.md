@@ -23,6 +23,39 @@ npm run dev
 
 # Documentación de la API
 
+Para la realización de la tarea, se hicieron 2 supuestos:
+
+- La relación entre **reinos** y **defensas** es de muchos a muchos, por lo que se implementó una nueva tabla **reino_tiene_defensa**.
+- Por dificultades para almacenar el parámetro de **fecha_registro** de la tabla **personaje_habita_reino**, se definió esta columna como una que almacena el instante en el cual se ingresa el registro en la tabla. La justificación de esto es que no se hace mención a su significado, por lo que podemos hacer esto sin salirnos de lo establecido en la tarea.
+
+## EndPoints
+
+Se solicitó la implementación de 4 EndPoints a parte de los **CRUD**. A continuación se especifica su utilización.
+
+### (GET) /api/top5personajesConMasFuerza
+
+Con esta ruta se puede obtener un listado de a lo más 5 personajes que poseen más fuerza. No tiene parámetros.
+
+![](https://github.com/Konnits/T2/blob/main/Images/top5personajesconmasfuerza.png)
+
+### (GET) /api/personajeConMasKarts
+
+Con esta ruta se puede obtener el personaje que más autos posee.
+
+![](https://github.com/Konnits/T2/blob/main/Images/personajeconmaskarts.png)
+
+### (GET) /api/cantidadHabitantes/<id_reino>
+
+Con esta ruta se puede obtener la cantidad de personajes que posee un reino, para lo cual el parámetro **id_reino** es necesario.
+
+![](https://github.com/Konnits/T2/blob/main/Images/cantidadhabitantes.png)
+
+### (GET) /api/gobernante/<id_reino>
+
+Con esta ruta se puede obtener un listado de los personajes que son gobernantes de un reino específico. Cuando este parámetro no se especifica, entonces se retornan todos los personajes que son gobernantes de algún reino.
+
+![](https://github.com/Konnits/T2/blob/main/Images/gobernante.png)
+
 ## CRUD
 
 ### Personajes
