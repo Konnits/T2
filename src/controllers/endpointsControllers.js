@@ -63,7 +63,7 @@ const gobernante = async (req, res) => {
     const { id_reino } = req.params
 
     if(!id_reino){
-        const gobernantes = prisma.personaje_habita_reino.findMany({
+        const gobernantes = await prisma.personaje_habita_reino.findMany({
             where: {
                 es_gobernante: true
             }
@@ -80,7 +80,24 @@ const gobernante = async (req, res) => {
         }))
 
     }else{
-        
+
+        if(isNaN(parseInt(id_reino))){
+            res.status(400).json({error: 'Param id_reino must be a number'})
+            return
+        }
+
+        const governantes = await prisma.personaje_habita_reino.findMany({
+            where: {
+                id_reino: parseInt(id_reino),
+                es_gobernante: true
+            }
+        })
+
+        const personajes = (await prisma.personajes.findMany({})).filter(personaje => governantes.find(gobernante => gobernante.id_personaje === personaje.id))
+
+        res.json({
+            
+        })
     }
 }
 

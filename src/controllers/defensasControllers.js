@@ -92,7 +92,7 @@ const updateDefensa = async (req, res) => {
             id: parseInt(id)
         },
         data: {
-            defensa: parseInt(defensa)
+            defensa: defensa
         }
     })
 
