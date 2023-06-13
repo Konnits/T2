@@ -75,3 +75,47 @@ Parámetros:
 
 
 ![](https://github.com/Konnits/T2/blob/main/Images/delete_personajes.png)
+
+### Trabajos
+
+#### (POST) Crear trabajo - /api/trabajos
+
+Parámetros:
+
+- descripcion: varchar(45) 
+- sueldo: integer (required)
+
+![](https://github.com/Konnits/T2/blob/main/Images/create_trabajos.png)
+
+#### (GET) Obtener trabajos - /api/trabajos
+
+Si ningún parámetro es adjuntado, entonces se devolverán todos los personajes. Es posible utilizar el parámetro fuerza como un rango de enteros. Además es posible utilizar fecha_nacimiento como un rango de fechas escrito con "/".
+
+Parámetros:
+
+- descripcion: varchar(45) 
+- sueldo: integer 
+
+![](https://github.com/Konnits/T2/blob/main/Images/get_trabajos.png)
+
+#### (PUT) Actualizar trabajos - /api/trabajos
+
+Solo es necesario ingresar un Id válido, mientras que los parámetros que no sean proporcionados se mantendrán como antes.
+
+Parámetros:
+
+- descripcion: varchar(45) 
+- sueldo: integer 
+
+![](https://github.com/Konnits/T2/blob/main/Images/update_trabajos.png)
+
+#### (DELETE) Eliminar trabajos - /api/trabajos
+
+Es necesario sólo ingresar la clave primaria del trabajo.
+
+Parámetros:
+
+- id: integer (required)
+
+
+![](https://github.com/Konnits/T2/blob/main/Images/delete_trabajos.png)
