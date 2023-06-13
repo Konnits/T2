@@ -1,5 +1,6 @@
 import requests
 import json
+import datetime
 
 personajes = [
     ("Mario", 250, "1932-01-23", None),
@@ -56,21 +57,21 @@ reinos = [
 ]
 
 personaje_habita_reino = [
-    (1,1,"1933-01-23",True),
-    (2,2,"1957-12-20",True),
+    (1,1,"2000-01-23",True),
+    (2,2,"1997-12-20",True),
     (3,3,"2001-03-01",True),
     (4,4,"2000-11-22",True),
     (5,5,"2011-09-09",True),
     (6,1,"1921-07-07",False),
-    (7,2,"1819-01-01",False),
-    (8,3,"1919-04-18",False),
+    (7,2,"1999-01-01",False),
+    (8,3,"1999-04-18",False),
     (9,4,"2004-12-14",False),
     (10,5,"1999-03-14",False),
     (11,1,"1999-09-18",False),
-    (12,2,"1969-08-08",False),
-    (13,3,"1945-04-14",False),
-    (14,4,"1957-06-26",False),
-    (15,5,"1959-08-29",False)
+    (12,2,"1999-08-08",False),
+    (13,3,"1995-04-14",False),
+    (14,4,"1997-06-26",False),
+    (15,5,"1999-08-29",False)
 ]
 
 defensas=[
@@ -202,12 +203,10 @@ for id_personaje, id_reino, fecha_registro, es_gobernante in personaje_habita_re
 
     print(f"Insertando {id_personaje}, {id_reino}, {fecha_registro}, {es_gobernante}")
 
-    
 
     data = {
         "id_personaje" : id_personaje,
         "id_reino" : id_reino,
-        "fecha_registro" : fecha_registro,
         "es_gobernante" : int(es_gobernante)
     }
 
