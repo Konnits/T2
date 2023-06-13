@@ -27,7 +27,7 @@ npm run dev
 
 ### Personajes
 
-#### (GET) Crear personaje - /api/personajes
+#### (POST) Crear personaje - /api/personajes
 
 Parámetros:
 
@@ -37,3 +37,16 @@ Parámetros:
 - objeto: varchar(45)
 
 ![](https://github.com/Konnits/T2/blob/main/Images/crear_personaje.png)
+
+#### (GET) Obtener personajes - /api/personajes
+
+Si ningún parámetro es adjuntado, entonces se devolverán todos los personajes. Es posible utilizar el parámetro fuerza como un rango de enteros. Además es posible utilizar fecha_nacimiento como un rango de fechas escrito con "/".
+
+Parámetros:
+
+- nombre: varchar(45)
+- fuerza: integer - range
+- fecha_nacimiento: date - range
+- objeto: varchar(45)
+
+![](https://github.com/Konnits/T2/blob/main/Images/get_personajes.png)
