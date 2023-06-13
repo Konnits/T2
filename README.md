@@ -303,7 +303,7 @@ Parámetros:
 
 -----
 
-#### (POST) Borrar reino - /api/reinos
+#### (DELETE) Borrar reino - /api/reinos
 
 Para eliminar un reino es necesario aportar su Id.
 
