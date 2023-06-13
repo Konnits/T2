@@ -164,7 +164,7 @@ Parámetros:
 - fecha_inicio: date  
 - fecha_termino: date 
 
-![](https://github.com/Konnits/T2/blob/main/Images/create_personaje_tiene_trabajo.png)
+![](https://github.com/Konnits/T2/blob/main/Images/get_personaje_tiene_trabajo.png)
 
 -----
 
