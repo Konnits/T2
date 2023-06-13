@@ -150,10 +150,12 @@ const updateDiplomacia = async (req, res) => {
         return
     }
 
-    const diplomaciaExists = await prisma.diplomacias.findFirst({
+    const diplomaciaExists = await prisma.diplomacias.findUnique({
         where: {
-            id_reino_1: parseInt(id_reino_1),
-            id_reino_2: parseInt(id_reino_2)
+            id_reino_1_id_reino_2: {
+                id_reino_1: parseInt(id_reino_1),
+                id_reino_2: parseInt(id_reino_2)
+           }
         }
     })
 
@@ -164,8 +166,10 @@ const updateDiplomacia = async (req, res) => {
 
     const diplomacia = await prisma.diplomacias.update({
         where: {
-            id_reino_1: parseInt(id_reino_1),
-            id_reino_2: parseInt(id_reino_2)
+            id_reino_1_id_reino_2: {
+                id_reino_1: parseInt(id_reino_1),
+                id_reino_2: parseInt(id_reino_2)
+            }
         },
         data: {
             es_aliado: Boolean(parseInt(es_aliado))
