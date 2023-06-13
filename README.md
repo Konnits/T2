@@ -38,6 +38,8 @@ Parámetros:
 
 ![](https://github.com/Konnits/T2/blob/main/Images/create_personajes.png)
 
+-----
+
 #### (GET) Obtener personajes - /api/personajes
 
 Si ningún parámetro es adjuntado, entonces se devolverán todos los personajes. Es posible utilizar el parámetro fuerza como un rango de enteros. Además es posible utilizar fecha_nacimiento como un rango de fechas escrito con "/".
@@ -50,6 +52,8 @@ Parámetros:
 - objeto: varchar(45)
 
 ![](https://github.com/Konnits/T2/blob/main/Images/get_personajes.png)
+
+-----
 
 #### (PUT) Actualizar personaje - /api/personajes
 
@@ -65,6 +69,8 @@ Parámetros:
 
 ![](https://github.com/Konnits/T2/blob/main/Images/update_personajes.png)
 
+-----
+
 #### (DELETE) Eliminar personajes - /api/personajes
 
 Es necesario sólo ingresar la clave primaria del personaje.
@@ -75,6 +81,8 @@ Parámetros:
 
 
 ![](https://github.com/Konnits/T2/blob/main/Images/delete_personajes.png)
+
+-----
 
 ### Trabajos
 
@@ -87,6 +95,8 @@ Parámetros:
 
 ![](https://github.com/Konnits/T2/blob/main/Images/create_trabajos.png)
 
+-----
+
 #### (GET) Obtener trabajos - /api/trabajos
 
 Si ningún parámetro es adjuntado, entonces se devolverán todos los personajes. Es posible utilizar el parámetro fuerza como un rango de enteros. Además es posible utilizar fecha_nacimiento como un rango de fechas escrito con "/".
@@ -97,6 +107,8 @@ Parámetros:
 - sueldo: integer 
 
 ![](https://github.com/Konnits/T2/blob/main/Images/get_trabajos.png)
+
+-----
 
 #### (PUT) Actualizar trabajos - /api/trabajos
 
@@ -109,6 +121,8 @@ Parámetros:
 
 ![](https://github.com/Konnits/T2/blob/main/Images/update_trabajos.png)
 
+-----
+
 #### (DELETE) Eliminar trabajos - /api/trabajos
 
 Es necesario sólo ingresar la clave primaria del trabajo.
@@ -119,6 +133,8 @@ Parámetros:
 
 
 ![](https://github.com/Konnits/T2/blob/main/Images/delete_trabajos.png)
+
+-----
 
 ### Personaje_tiene_trabajo
 
@@ -135,6 +151,8 @@ Parámetros:
 
 ![](https://github.com/Konnits/T2/blob/main/Images/create_personaje_tiene_trabajo.png)
 
+-----
+
 #### (GET) Visualizar personaje trabajador - /api/personaje_tiene_trabajo
 
 Si ningún parámetro es adjuntado, entonces se devolverán todos los personajes que tienen trabajo.
@@ -147,6 +165,8 @@ Parámetros:
 - fecha_termino: date 
 
 ![](https://github.com/Konnits/T2/blob/main/Images/create_personaje_tiene_trabajo.png)
+
+-----
 
 #### (PUT) Actualizar personaje trabajador - /api/personaje_tiene_trabajo
 
@@ -161,6 +181,8 @@ Parámetros:
 
 ![](https://github.com/Konnits/T2/blob/main/Images/update_personaje_tiene_trabajo.png)
 
+-----
+
 #### (DELETE) Borrar personaje trabajador - /api/personaje_tiene_trabajo
 
 Solo es necesario ingresar un Id válido de trabajo y un Id válido de personaje para descartar toda la información asociada al trabajo de un personaje.
@@ -171,6 +193,8 @@ Parámetros:
 - id_personaje: integer (required)
 
 ![](https://github.com/Konnits/T2/blob/main/Images/delete_personaje_tiene_trabajo.png)
+
+-----
 
 ### Karts
 
@@ -187,6 +211,8 @@ Parámetros:
 
 ![](https://github.com/Konnits/T2/blob/main/Images/create_karts.png)
 
+-----
+
 #### (GET) Obtener automovil - /api/karts
 
 Si ningún parámetro es adjuntado, entonces se devolverán todos los automóviles.
@@ -199,6 +225,8 @@ Parámetros:
 - id_personaje: integer 
 
 ![](https://github.com/Konnits/T2/blob/main/Images/get_karts.png)
+
+-----
 
 #### (PUT) Actualizar automovil - /api/karts
 
@@ -214,6 +242,8 @@ Parámetros:
 
 ![](https://github.com/Konnits/T2/blob/main/Images/update_karts.png)
 
+-----
+
 
 #### (DELETE) Eliminar automovil - /api/karts
 
@@ -224,6 +254,8 @@ Parámetros:
 - id: integer
 
 ![](https://github.com/Konnits/T2/blob/main/Images/delete_karts.png)
+
+-----
 
 ### Reinos
 
@@ -239,6 +271,8 @@ Parámetros:
 
 ![](https://github.com/Konnits/T2/blob/main/Images/create_reinos.png)
 
+-----
+
 #### (GET) Obtener reino - /api/reinos
 
 Para obtener un reino se pueden facilitar cualquiera de sus parámetros, mientras que si no se coloca ningun parámetro se devolveran todos los reinos,
@@ -251,6 +285,8 @@ Parámetros:
 - superficie: integer 
 
 ![](https://github.com/Konnits/T2/blob/main/Images/get_reinos.png)
+
+-----
 
 #### (PUT) Actualizar reino - /api/reinos
 
@@ -265,6 +301,8 @@ Parámetros:
 
 ![](https://github.com/Konnits/T2/blob/main/Images/update_reinos.png)
 
+-----
+
 #### (POST) Borrar reino - /api/reinos
 
 Para eliminar un reino es necesario aportar su Id.
@@ -274,6 +312,8 @@ Parámetros:
 - id: integer (required) 
 
 ![](https://github.com/Konnits/T2/blob/main/Images/delete_reinos.png)
+
+-----
 
 ### Personaje_habita_reino
 
@@ -289,6 +329,8 @@ Parámetros:
 
 ![](https://github.com/Konnits/T2/blob/main/Images/create_personaje_habita_reino.png)
 
+-----
+
 #### (GET) Obtener personaje de un reino - /api/personaje_habita_reino
 
 Para obtener un habitante de un reino se pueden facilitar cualquiera de sus parámetros, mientras que si no se coloca ningun parámetro se devolveran todos habitantes de todos los reinos.
@@ -301,6 +343,8 @@ Parámetros:
 - es_gobernante: boolean 
 
 ![](https://github.com/Konnits/T2/blob/main/Images/get_personaje_habita_reino.png)
+
+-----
 
 
 #### (PUT) Actualizar personajes de un reino - /api/personaje_habita_reino
@@ -315,6 +359,8 @@ Parámetros:
 
 ![](https://github.com/Konnits/T2/blob/main/Images/update_personaje_habita_reino.png)
 
+-----
+
 #### (DELETE) Borrar personaje perteneciente a un reino - /api/personaje_habita_reino
 
 Para eliminar un personaje de un reino es necesario aportar Id del personaje e Id del reino.
@@ -325,6 +371,8 @@ Parámetros:
 - id_reino: integer (required)
 
 ![](https://github.com/Konnits/T2/blob/main/Images/delete_personaje_habita_reino.png)
+
+-----
 
 ### Defensas
 
@@ -338,6 +386,8 @@ Parámetros:
 
 ![](https://github.com/Konnits/T2/blob/main/Images/create_defensas.png)
 
+-----
+
 #### (GET) Obtener defensas - /api/defensas
 
 Para obtener las defensas se puede especificar algunos de los parámetros o bien, no proporcionarlos para así obtener el registro completo de las defensas.
@@ -348,6 +398,8 @@ Parámetros:
 - defensa: varchar(45)
 
 ![](https://github.com/Konnits/T2/blob/main/Images/get_defensas.png)
+
+-----
 
 
 #### (PUT) Actualizar defensas - /api/defensas
@@ -361,6 +413,8 @@ Parámetros:
 
 ![](https://github.com/Konnits/T2/blob/main/Images/update_defensas.png)
 
+-----
+
 #### (DELETE) Borrar defensas - /api/defensas
 
 Para eliminar una defensa es necesario contar con su id.
@@ -370,3 +424,5 @@ Parámetros:
 - id: integer (required)
 
 ![](https://github.com/Konnits/T2/blob/main/Images/delete_defensas.png)
+
+-----
