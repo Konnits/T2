@@ -91,10 +91,12 @@ const insertDiplomacia = async (req, res) => {
         return
     }
 
-    const diplomaciaExists = await prisma.diplomacias.findFirst({
+    const diplomaciaExists = await prisma.diplomacias.findUnique({
         where: {
-            id_reino_1: parseInt(id_reino_1),
-            id_reino_2: parseInt(id_reino_2)
+            id_reino_1_id_reino_2: {
+                id_reino_1: parseInt(id_reino_1),
+                id_reino_2: parseInt(id_reino_2)
+            }
         }
     })
 

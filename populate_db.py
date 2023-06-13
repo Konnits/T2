@@ -240,7 +240,8 @@ for id_reino, id_defensa in reino_tiene_defensa:
 
     data = {
         "id_reino" : id_reino,
-        "id_defensa" : id_defensa
+        "id_defensa" : id_defensa,
+        "cantidad" : 5
     }
 
     response = requests.post(
@@ -258,7 +259,7 @@ for id_reino_1, id_reino_2, es_aliado in diplomacias:
     data = {
         "id_reino_1" : id_reino_1,
         "id_reino_2" : id_reino_2,
-        "es_aliado" : es_aliado,
+        "es_aliado" : int(es_aliado),
     }
 
     response = requests.post(

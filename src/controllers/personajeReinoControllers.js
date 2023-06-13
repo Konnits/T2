@@ -123,6 +123,20 @@ const insertPersonajeReino = async (req, res) => {
         return
     }
 
+    const personajeReinoExists = await prisma.personaje_habita_reino.findUnique({
+        where: {
+            id_personaje_id_reino: {
+                id_personaje: parseInt(id_personaje),
+                id_reino: parseInt(id_reino)
+            }
+        }
+    })
+
+    if(personajeReinoExists){
+        res.status(400).json({error: 'PersonajeReino already exists'})
+        return
+    }
+
     const personajeReino = await prisma.personaje_habita_reino.create({
         data: {
             id_personaje: parseInt(id_personaje),
