@@ -426,3 +426,120 @@ Parámetros:
 ![](https://github.com/Konnits/T2/blob/main/Images/delete_defensas.png)
 
 -----
+
+### Reino_tiene_defensas
+
+#### (POST) Crear reino_tiene_defensa - /api/reino_tiene_defensa
+
+Para asignarle una defensa a un reino en particular es necesario tener id_reino, id_defensa y cantidad, la cual indica cuántas de dicha defensa posee dicho reino.
+
+Parámetros:
+
+- id_reino: int (required)
+- id_defensa: int (required)
+- cantidad: int (required)
+
+![](https://github.com/Konnits/T2/blob/main/Images/create_reino_tiene_defensa.png)
+
+-----
+
+#### (GET) Obtener reino_tiene_defensa - /api/reino_tiene_defensa
+
+Se puede obtener la totalidad de las defensas que son poseidas por algún reino, al no colocar ningún parámetro en la petición, por otro lado, cualquier parámetro que se agregue, filtrará los datos.
+
+Parámetros:
+
+- id_reino: int
+- id_defensa: int
+- cantidad: int
+
+![](https://github.com/Konnits/T2/blob/main/Images/get_reino_tiene_defensa.png)
+
+-----
+
+
+#### (PUT) Actualizar reino_tiene_defensa - /api/reino_tiene_defensa
+
+Para actualizar un registro debemos proporcionar id_reino, id_defensa y cantidad, pues, cantidad al ser el único valor actualizable, es necesario para que esta acción tenga sentido.
+
+Parámetros:
+
+- id_reino: int (required)
+- id_defensa: int (required)
+- cantidad: int (required)
+
+![](https://github.com/Konnits/T2/blob/main/Images/update_reino_tiene_defensa.png)
+
+-----
+
+#### (DELETE) Borrar reino_tiene_defensa - /api/reino_tiene_defensa
+
+Para eliminar las defensas de un reino es necesario contar con los id_reino e id_defensa.
+
+Parámetros:
+
+- id_reino: int (required)
+- id_defensa: int (required)
+
+![](https://github.com/Konnits/T2/blob/main/Images/delete_reino_tiene_defensa.png)
+
+
+-----
+
+### Diplomacias
+
+#### (POST) Crear reino_tiene_defensa - /api/reino_tiene_defensa
+
+Para asignarle una defensa a un reino en particular es necesario tener id_reino, id_defensa y cantidad, la cual indica cuántas de dicha defensa posee dicho reino.
+
+Parámetros:
+
+- id_reino: int (required)
+- id_defensa: int (required)
+- cantidad: int (required)
+
+![](https://github.com/Konnits/T2/blob/main/Images/create_reino_tiene_defensa.png)
+
+-----
+
+#### (GET) Obtener reino_tiene_defensa - /api/reino_tiene_defensa
+
+Se puede obtener la totalidad de las defensas que son poseidas por algún reino, al no colocar ningún parámetro en la petición, por otro lado, cualquier parámetro que se agregue, filtrará los datos.
+
+Parámetros:
+
+- id_reino: int
+- id_defensa: int
+- cantidad: int
+
+![](https://github.com/Konnits/T2/blob/main/Images/get_reino_tiene_defensa.png)
+
+-----
+
+
+#### (PUT) Actualizar reino_tiene_defensa - /api/reino_tiene_defensa
+
+Para actualizar un registro debemos proporcionar id_reino, id_defensa y cantidad, pues, cantidad al ser el único valor actualizable, es necesario para que esta acción tenga sentido.
+
+Parámetros:
+
+- id_reino: int (required)
+- id_defensa: int (required)
+- cantidad: int (required)
+
+![](https://github.com/Konnits/T2/blob/main/Images/update_reino_tiene_defensa.png)
+
+-----
+
+#### (DELETE) Borrar reino_tiene_defensa - /api/reino_tiene_defensa
+
+Para eliminar las defensas de un reino es necesario contar con los id_reino e id_defensa.
+
+Parámetros:
+
+- id_reino: int (required)
+- id_defensa: int (required)
+
+![](https://github.com/Konnits/T2/blob/main/Images/delete_reino_tiene_defensa.png)
+
+-----
