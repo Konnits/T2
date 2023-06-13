@@ -125,7 +125,7 @@ const insertPersonajeTrabajo = async (req, res) => {
     })
 
     if(!personaje){
-        res.status(204).json({error: 'Personaje not found'})
+        res.status(404).json({error: 'Personaje not found'})
         return
     }
 
@@ -136,7 +136,7 @@ const insertPersonajeTrabajo = async (req, res) => {
     })
 
     if(!trabajo){
-        res.status(204).json({error: 'Trabajo not found'})
+        res.status(404).json({error: 'Trabajo not found'})
         return
     }
 
@@ -206,7 +206,7 @@ const updatePersonajeTrabajo = async (req, res) => {
     })
 
     if(!personaje){
-        res.status(204).json({error: 'Personaje not found'})
+        res.status(404).json({error: 'Personaje not found'})
         return
     }
 
@@ -217,7 +217,7 @@ const updatePersonajeTrabajo = async (req, res) => {
     })
 
     if(!trabajo){
-        res.status(204).json({error: 'Trabajo not found'})
+        res.status(404).json({error: 'Trabajo not found'})
         return
     }
 
@@ -231,7 +231,7 @@ const updatePersonajeTrabajo = async (req, res) => {
     })
 
     if(!prev_personajeTrabajo){
-        res.status(204).json({error: 'Personaje and Trabajo does not match together'})
+        res.status(404).json({error: 'Personaje and Trabajo does not match together'})
         return
     }
 
@@ -281,7 +281,7 @@ const deletePersonajeTrabajo = async (req, res) => {
     })
 
     if(!personaje){
-        res.status(204).json({error: 'Personaje not found'})
+        res.status(404).json({error: 'Personaje not found'})
         return
     }
 
@@ -292,7 +292,7 @@ const deletePersonajeTrabajo = async (req, res) => {
     })
 
     if(!trabajo){
-        res.status(204).json({error: 'Trabajo not found'})
+        res.status(404).json({error: 'Trabajo not found'})
         return
     }
 
@@ -306,7 +306,7 @@ const deletePersonajeTrabajo = async (req, res) => {
     })
 
     if(!personajeTrabajoExists){
-        res.status(204).json({error: 'Personaje and Trabajo does not match together'})
+        res.status(404).json({error: 'Personaje and Trabajo does not match together'})
         return
     }
 

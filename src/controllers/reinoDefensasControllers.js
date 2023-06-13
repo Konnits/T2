@@ -93,7 +93,7 @@ const insertReinoDefensa = async (req, res) => {
     })
 
     if(!reino){
-        res.status(204).json({error: 'Reino not found'})
+        res.status(404).json({error: 'Reino not found'})
         return
     }
 
@@ -104,7 +104,7 @@ const insertReinoDefensa = async (req, res) => {
     })
 
     if(!defensa){
-        res.status(204).json({error: 'Defensa not found'})
+        res.status(404).json({error: 'Defensa not found'})
         return
     }
 
@@ -174,7 +174,7 @@ const updateReinoDefensa = async (req, res) => {
     })
 
     if(!reino){
-        res.status(204).json({error: 'Reino not found'})
+        res.status(404).json({error: 'Reino not found'})
         return
     }
 
@@ -185,7 +185,7 @@ const updateReinoDefensa = async (req, res) => {
     })
 
     if(!defensa){
-        res.status(204).json({error: 'Defensa not found'})
+        res.status(404).json({error: 'Defensa not found'})
         return
     }
 
@@ -199,7 +199,7 @@ const updateReinoDefensa = async (req, res) => {
     })
 
     if(!reinoDefensaExists){
-        res.status(204).json({error: 'ReinoDefensa not found'})
+        res.status(404).json({error: 'ReinoDefensa not found'})
         return
     }
 
@@ -250,7 +250,7 @@ const deleteReinoDefensa = async (req, res) => {
     })
 
     if(!reinoDefensaExists){
-        res.status(204).json({error: 'ReinoDefensa not found'})
+        res.status(404).json({error: 'ReinoDefensa not found'})
         return
     }
 

@@ -92,7 +92,7 @@ const insertKart = async (req, res) => {
         })
 
         if(!personaje){
-            res.status(204).json({error: 'Param id_personaje must be a existing id'})
+            res.status(404).json({error: 'Param id_personaje must be a existing id'})
             return
         }
     }
@@ -144,7 +144,7 @@ const updateKart = async (req, res) => {
             }
         })
         if(!personaje){
-            res.status(204).json({error: 'Param id_personaje must be a existing id'})
+            res.status(404).json({error: 'Param id_personaje must be a existing id'})
             return
         }
     }
@@ -156,7 +156,7 @@ const updateKart = async (req, res) => {
     })
 
     if(!prev_kart){
-        res.status(204).json({error: 'Param id must be a existing id'})
+        res.status(404).json({error: 'Param id must be a existing id'})
         return
     }
 
@@ -194,7 +194,7 @@ const deleteKart = async (req, res) => {
     })
 
     if(!kartExists){
-        res.status(204).json({error: 'Kart not found'})
+        res.status(404).json({error: 'Kart not found'})
         return
     }
 

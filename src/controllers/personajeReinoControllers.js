@@ -108,7 +108,7 @@ const insertPersonajeReino = async (req, res) => {
     })
 
     if(!personaje){
-        res.status(204).json({error: 'Personaje not found'})
+        res.status(404).json({error: 'Personaje not found'})
         return
     }
 
@@ -119,7 +119,7 @@ const insertPersonajeReino = async (req, res) => {
     })
     
     if(!reino){
-        res.status(204).json({error: 'Reino not found'})
+        res.status(404).json({error: 'Reino not found'})
         return
     }
 
@@ -191,7 +191,7 @@ const updatePersonajeReino = async (req, res) => {
     })
 
     if(!prev_personajeReino){
-        res.status(204).json({error: 'personaje_habita_reino not found'})
+        res.status(404).json({error: 'personaje_habita_reino not found'})
         return
     }
 
@@ -241,7 +241,7 @@ const deletePersonajeReino = async (req, res) => {
     })
 
     if(!existing_personajeReino){
-        res.status(204).json({error: 'personaje_habita_reino not found'})
+        res.status(404).json({error: 'personaje_habita_reino not found'})
         return
     }
 

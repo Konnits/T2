@@ -125,7 +125,7 @@ const updateReino = async (req, res) => {
     })
 
     if(!prev_reino){
-        res.status(204).json({error: 'Reino not found'})
+        res.status(404).json({error: 'Reino not found'})
         return
     }
 
@@ -158,7 +158,7 @@ const deleteReino = async (req, res) => {
     })
 
     if(!reino_exists){
-        res.status(204).json({error: 'Reino not found'})
+        res.status(404).json({error: 'Reino not found'})
         return
     }
 

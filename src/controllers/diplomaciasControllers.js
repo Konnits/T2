@@ -76,7 +76,7 @@ const insertDiplomacia = async (req, res) => {
     })
 
     if(!reino_1){
-        res.status(204).json({error: 'Reino 1 not found'})
+        res.status(404).json({error: 'Reino 1 not found'})
         return
     }
 
@@ -87,7 +87,7 @@ const insertDiplomacia = async (req, res) => {
     })
 
     if(!reino_2){
-        res.status(204).json({error: 'Reino 2 not found'})
+        res.status(404).json({error: 'Reino 2 not found'})
         return
     }
 
@@ -158,7 +158,7 @@ const updateDiplomacia = async (req, res) => {
     })
 
     if(!diplomaciaExists){
-        res.status(204).json({error: 'Diplomacia not found'})
+        res.status(404).json({error: 'Diplomacia not found'})
         return
     }
 
@@ -206,7 +206,7 @@ const deleteDiplomacia = async (req, res) => {
     })
 
     if(!diplomaciaExists){
-        res.status(204).json({error: 'Diplomacia not found'})
+        res.status(404).json({error: 'Diplomacia not found'})
         return
     }
 

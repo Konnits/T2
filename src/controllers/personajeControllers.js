@@ -156,7 +156,7 @@ const updatePersonaje = async (req, res) => {
     })
 
     if(!personajeExists){
-        res.status(204).json({error: 'The id provided does not exist'})
+        res.status(404).json({error: 'The id provided does not exist'})
         return
     }
 
@@ -222,7 +222,7 @@ const deletePersonaje = async (req, res) => {
     })
 
     if(!personajeExists){
-        res.status(204).json({error: 'The id provided does not exist'})
+        res.status(404).json({error: 'The id provided does not exist'})
         return
     }
 

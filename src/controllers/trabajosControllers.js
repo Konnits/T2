@@ -109,7 +109,7 @@ const updateTrabajo = async (req, res) => {
     })
 
     if(!prev_trabajo){
-        res.status(204).json({error: 'Trabajo not found'})
+        res.status(404).json({error: 'Trabajo not found'})
         return
     }
 
@@ -146,7 +146,7 @@ const deleteTrabajo = async (req, res) => {
     })
 
     if(trabajos.length === 0){
-        res.status(204).json({error: 'Trabajo not found'})
+        res.status(404).json({error: 'Trabajo not found'})
         return
     }
 

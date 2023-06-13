@@ -42,22 +42,19 @@ const cantidad_habitantes = async (req, res) => {
         })
     
         if(!reino){
-            res.status(204).json({error: 'Reino not found'})
+            res.status(404).json({error: 'Reino not found'})
             return
         }
-    
-        const habitantes = await prisma.personajes.findMany()
-        const reinos = await prisma.personaje_habita_reino.findMany({
+
+        const personaje_reino = await prisma.personaje_habita_reino.findMany({
             where: {
                 id_reino: parseInt(id_reino)
             }
         })
 
-        const cantidad_habitantes = habitantes.filter(habitante => habitante.id_reino === id_reino).length
-
         res.json({
             reino: reino.nombre,
-            cantidad_habitantes: cantidad_habitantes
+            cantidad_habitantes: personaje_reino.length
         })       
 }
 
@@ -72,7 +69,7 @@ const gobernante = async (req, res) => {
             })
         
             if(!reino){
-                res.status(204).json({error: 'Reino not found'})
+                res.status(404).json({error: 'Reino not found'})
                 return
             }
         
