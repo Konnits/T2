@@ -251,8 +251,10 @@ const deletePersonajeReino = async (req, res) => {
 
     const personajeReino = await prisma.personaje_habita_reino.delete({
         where: {
-            id_personaje: parseInt(id_personaje),
-            id_reino: parseInt(id_reino)
+            id_personaje_id_reino: {
+                id_personaje: parseInt(id_personaje),
+                id_reino: parseInt(id_reino)
+            }
         }
     })
 

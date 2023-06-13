@@ -69,7 +69,15 @@ const gobernante = async (req, res) => {
                     }
                 })
 
-                const personajes = await prisma.personajes.findMany()
+                const personajes = (await prisma.personajes.findMany()).filter(personaje => gobernantes.find(gobernante => gobernante.id_personaje === personaje.id))
+                const reinos = (await prisma.reinos.findMany()).filter(reino => gobernantes.find(gobernante => gobernante.id_reino === reino.id))
+                
+                res.json(personajes.map(personaje => {
+                    return {
+                        nombre: personaje.nombre,
+                        reino: reinos.find(reino => reino.id === personaje.id_reino).nombre
+                    }
+                }))
 
             }
 }
