@@ -205,8 +205,10 @@ const updateReinoDefensa = async (req, res) => {
 
     const reinoDefensas = await prisma.reino_tiene_defensa.update({
         where: {
-            id_reino: parseInt(id_reino),
-            id_defensa: parseInt(id_defensa)
+            id_reino_id_defensa: {
+                id_reino: parseInt(id_reino),
+                id_defensa: parseInt(id_defensa)
+            }
         },
         data: {
             cantidad: parseInt(cantidad)

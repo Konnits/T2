@@ -142,7 +142,7 @@ const insertPersonajeReino = async (req, res) => {
             id_personaje: parseInt(id_personaje),
             id_reino: parseInt(id_reino),
             // fecha_registro: fecha_registro,
-            es_gobernante: Boolean(es_gobernante)
+            es_gobernante: Boolean(parseInt(es_gobernante))
         }
     })
 

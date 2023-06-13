@@ -61,6 +61,7 @@ app.get('/api/top5personajesConMasFuerza', UsersController.top_5_personajes_con_
 app.get('/api/personajeConMasKarts', UsersController.personaje_con_mas_karts);
 app.get('/api/cantidadHabitantes/:id_reino', UsersController.cantidad_habitantes);
 app.get('/api/gobernante/:id_reino', UsersController.gobernante);
+app.get('/api/gobernante', UsersController.gobernante);
 //==========================================================//
 app.get('/', (req, res) => {
     res.json({ message: 'Hello World!!' });
