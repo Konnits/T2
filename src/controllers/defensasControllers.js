@@ -45,7 +45,7 @@ const insertDefensa = async (req, res) => {
 
     const defensas = await prisma.defensas.create({
         data: {
-            defensa: parseInt(defensa)
+            defensa: defensa
         }
     })
 

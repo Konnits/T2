@@ -50,7 +50,7 @@ const getPersonajeReino = async (req, res) => {
                     gte: parseInt(fecha_registro.split('-')[0]),
                     lte: parseInt(fecha_registro.split('-')[1])
                 } : parseInt(fecha_registro) : undefined,
-                es_gobernante: es_gobernante ? parseInt(es_gobernante) : undefined
+                es_gobernante: es_gobernante ? Boolean(es_gobernante) : undefined
             }
         })
         res.json(personajeReino)
@@ -188,7 +188,7 @@ const updatePersonajeReino = async (req, res) => {
         },
         data: {
             fecha_registro: fecha_registro ? parseInt(fecha_registro) : prev_personajeReino.fecha_registro,
-            es_gobernante: es_gobernante ? parseInt(es_gobernante) : prev_personajeReino.es_gobernante
+            es_gobernante: es_gobernante ? Boolean(es_gobernante) : prev_personajeReino.es_gobernante
         }
     })
 
