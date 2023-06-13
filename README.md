@@ -488,58 +488,58 @@ Parámetros:
 
 ### Diplomacias
 
-#### (POST) Crear reino_tiene_defensa - /api/reino_tiene_defensa
+#### (POST) Crear diplomacias - /api/diplomacias
 
-Para asignarle una defensa a un reino en particular es necesario tener id_reino, id_defensa y cantidad, la cual indica cuántas de dicha defensa posee dicho reino.
+Para crear una diplomacia es necesario proporcionar el id de los dos reinos y si son aliados o no.
 
 Parámetros:
 
-- id_reino: int (required)
-- id_defensa: int (required)
-- cantidad: int (required)
+- id_reino_1: int (required)
+- id_reino_2: int (required)
+- es_aliado: boolean (required)
 
-![](https://github.com/Konnits/T2/blob/main/Images/create_reino_tiene_defensa.png)
+![](https://github.com/Konnits/T2/blob/main/Images/create_diplomacias.png)
 
 -----
 
-#### (GET) Obtener reino_tiene_defensa - /api/reino_tiene_defensa
+#### (GET) Obtener diplomacias - /api/diplomacias
 
-Se puede obtener la totalidad de las defensas que son poseidas por algún reino, al no colocar ningún parámetro en la petición, por otro lado, cualquier parámetro que se agregue, filtrará los datos.
+Se puede obtener la totalidad de las diplomacias que existen, al no colocar ningún parámetro en la petición, por otro lado, cualquier parámetro que se agregue, filtrará los datos.
 
 Parámetros:
 
-- id_reino: int
-- id_defensa: int
-- cantidad: int
+- id_reino_1: int
+- id_reino_2: int
+- es_aliado: boolean
 
-![](https://github.com/Konnits/T2/blob/main/Images/get_reino_tiene_defensa.png)
+![](https://github.com/Konnits/T2/blob/main/Images/get_diplomacias.png)
 
 -----
 
 
-#### (PUT) Actualizar reino_tiene_defensa - /api/reino_tiene_defensa
+#### (PUT) Actualizar diplomacias - /api/diplomacias
 
-Para actualizar un registro debemos proporcionar id_reino, id_defensa y cantidad, pues, cantidad al ser el único valor actualizable, es necesario para que esta acción tenga sentido.
+Para actualizar un registro debemos proporcionar id_reino_1, id_reino_2 y es_aliado, pues, es_aliado al ser el único valor actualizable, es necesario para que esta acción tenga sentido.
 
 Parámetros:
 
-- id_reino: int (required)
-- id_defensa: int (required)
-- cantidad: int (required)
+- id_reino_1: int (required)
+- id_reino_2: int (required)
+- es_aliado: boolean (required)
 
-![](https://github.com/Konnits/T2/blob/main/Images/update_reino_tiene_defensa.png)
+![](https://github.com/Konnits/T2/blob/main/Images/update_diplomacias.png)
 
 -----
 
-#### (DELETE) Borrar reino_tiene_defensa - /api/reino_tiene_defensa
+#### (DELETE) Borrar diplomacias - /api/diplomacias
 
-Para eliminar las defensas de un reino es necesario contar con los id_reino e id_defensa.
+Para eliminar las diplomacias entre dos reinos es necesario contar con los id_reino_1 e id_reino_2.
 
 Parámetros:
 
-- id_reino: int (required)
-- id_defensa: int (required)
+- id_reino_1: int (required)
+- id_reino_2: int (required)
 
-![](https://github.com/Konnits/T2/blob/main/Images/delete_reino_tiene_defensa.png)
+![](https://github.com/Konnits/T2/blob/main/Images/delete_diplomacias.png)
 
 -----
