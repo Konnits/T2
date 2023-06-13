@@ -88,8 +88,18 @@ const getPersonajes = async (req, res) => {
 const insertPersonaje = async (req, res) => {
     const { nombre, fuerza, fecha_nacimiento, objeto } = req.query
 
-    if(!nombre || !fuerza || !fecha_nacimiento){
-        res.status(400).json({error: 'Params nombre, fuerza and fecha_nacimiento are required'})
+    if(!nombre){
+        res.status(400).json({error: 'Param nombre is required'})
+        return
+    }
+
+    if(!fuerza){
+        res.status(400).json({error: 'Param fuerza is required'})
+        return
+    }
+
+    if(!fecha_nacimiento){
+        res.status(400).json({error: 'Param fecha_nacimiento is required'})
         return
     }
 
