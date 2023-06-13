@@ -62,27 +62,16 @@ const gobernante = async (req, res) => {
         
             const { id_reino } = req.params
         
-            const reino = await prisma.reinos.findUnique({
-                where: {
-                    id: parseInt(id_reino)
-                }
-            })
-        
-            if(!reino){
-                res.status(404).json({error: 'Reino not found'})
-                return
+            if(!id_reino){
+                const gobernantes = prisma.personaje_habita_reino.findMany({
+                    where: {
+                        es_gobernante: true
+                    }
+                })
+
+                
+
             }
-        
-            const gobernante = await prisma.personajes.findUnique({
-                where: {
-                    id: reino.id_gobernante
-                }
-            })
-        
-            res.json({
-                reino: reino.nombre,
-                gobernante: gobernante.nombre
-            })
 }
 
 export { top_5_personajes_con_mas_fuerza, personaje_con_mas_karts, cantidad_habitantes, gobernante }
