@@ -2,7 +2,7 @@ import prisma from '../prismaClient.js'
 
 const getReinoDefensas = async (req, res) => {
     if(Object.keys(req.query).length === 0){
-        const reinoDefensas = await prisma.reinoDefensas.findMany()
+        const reinoDefensas = await prisma.reino_tiene_defensa.findMany()
         res.json(reinoDefensas)
     }else{
 
@@ -37,7 +37,7 @@ const getReinoDefensas = async (req, res) => {
             }
         }
 
-        const reinoDefensas = await prisma.reinoDefensas.findMany({
+        const reinoDefensas = await prisma.reino_tiene_defensa.findMany({
             where: {
                 id_reino: id_reino ? parseInt(id_reino) : undefined,
                 id_defensa: id_defensa ? parseInt(id_defensa) : undefined,
@@ -108,10 +108,12 @@ const insertReinoDefensa = async (req, res) => {
         return
     }
 
-    const reinoDefensaExists = await prisma.reinoDefensas.findUnique({
+    const reinoDefensaExists = await prisma.reino_tiene_defensa.findUnique({
         where: {
-            id_reino: parseInt(id_reino),
-            id_defensa: parseInt(id_defensa)
+            id_reino_id_defensa: {
+                id_reino: parseInt(id_reino),
+                id_defensa: parseInt(id_defensa)
+            }
         }
     })
 
@@ -120,7 +122,7 @@ const insertReinoDefensa = async (req, res) => {
         return
     }
 
-    const reinoDefensas = await prisma.reinoDefensas.create({
+    const reinoDefensas = await prisma.reino_tiene_defensa.create({
         data: {
             id_reino: parseInt(id_reino),
             id_defensa: parseInt(id_defensa),
@@ -187,10 +189,12 @@ const updateReinoDefensa = async (req, res) => {
         return
     }
 
-    const reinoDefensaExists = await prisma.reinoDefensas.findUnique({
+    const reinoDefensaExists = await prisma.reino_tiene_defensa.findUnique({
         where: {
-            id_reino: parseInt(id_reino),
-            id_defensa: parseInt(id_defensa)
+            id_reino_id_defensa: {
+                id_reino: parseInt(id_reino),
+                id_defensa: parseInt(id_defensa)
+            }
         }
     })
 
@@ -199,7 +203,7 @@ const updateReinoDefensa = async (req, res) => {
         return
     }
 
-    const reinoDefensas = await prisma.reinoDefensas.update({
+    const reinoDefensas = await prisma.reino_tiene_defensa.update({
         where: {
             id_reino: parseInt(id_reino),
             id_defensa: parseInt(id_defensa)
@@ -236,10 +240,12 @@ const deleteReinoDefensa = async (req, res) => {
         return
     }
 
-    const reinoDefensaExists = await prisma.reinoDefensas.findUnique({
+    const reinoDefensaExists = await prisma.reino_tiene_defensa.findUnique({
         where: {
-            id_reino: parseInt(id_reino),
-            id_defensa: parseInt(id_defensa)
+            id_reino_id_defensa: {
+                id_reino: parseInt(id_reino),
+                id_defensa: parseInt(id_defensa)
+            }
         }
     })
 
@@ -248,7 +254,7 @@ const deleteReinoDefensa = async (req, res) => {
         return
     }
 
-    const reinoDefensas = await prisma.reinoDefensas.delete({
+    const reinoDefensas = await prisma.reino_tiene_defensa.delete({
         where: {
             id_reino: parseInt(id_reino),
             id_defensa: parseInt(id_defensa)

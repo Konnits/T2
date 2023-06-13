@@ -50,7 +50,7 @@ const getPersonajeReino = async (req, res) => {
                     gte: parseInt(fecha_registro.split('-')[0]),
                     lte: parseInt(fecha_registro.split('-')[1])
                 } : parseInt(fecha_registro) : undefined,
-                es_gobernante: es_gobernante ? parseInt(es_gobernante) : undefined
+                es_gobernante: es_gobernante ? Boolean(es_gobernante) : undefined
             }
         })
         res.json(personajeReino)
@@ -60,8 +60,6 @@ const getPersonajeReino = async (req, res) => {
 const insertPersonajeReino = async (req, res) => {
 
     const { id_personaje, id_reino, fecha_registro, es_gobernante } = req.query
-
-    console.log(req.query)
 
     if(!id_personaje){
         res.status(400).json({error: 'Missing id_personaje parameter'})
@@ -73,10 +71,10 @@ const insertPersonajeReino = async (req, res) => {
         return
     }
 
-    if(!fecha_registro){
-        res.status(400).json({error: 'Missing fecha_registro parameter'})
-        return
-    }
+    // if(!fecha_registro){
+    //     res.status(400).json({error: 'Missing fecha_registro parameter'})
+    //     return
+    // }
 
     if(!es_gobernante){
         res.status(400).json({error: 'Missing es_gobernante parameter'})
@@ -93,10 +91,10 @@ const insertPersonajeReino = async (req, res) => {
         return
     }
 
-    if(isNaN(parseInt(fecha_registro))){
-        res.status(400).json({error: 'Param fecha_registro must be a number'})
-        return
-    }
+    // if(isNaN(parseInt(fecha_registro))){
+    //     res.status(400).json({error: 'Param fecha_registro must be a number'})
+    //     return
+    // }
 
     if(isNaN(parseInt(es_gobernante))){
         res.status(400).json({error: 'Param es_gobernante must be a boolean'})
@@ -119,7 +117,7 @@ const insertPersonajeReino = async (req, res) => {
             id: parseInt(id_reino)
         }
     })
-
+    
     if(!reino){
         res.status(204).json({error: 'Reino not found'})
         return
@@ -129,8 +127,8 @@ const insertPersonajeReino = async (req, res) => {
         data: {
             id_personaje: parseInt(id_personaje),
             id_reino: parseInt(id_reino),
-            fecha_registro: Date.parse(fecha_registro),
-            es_gobernante: parseInt(es_gobernante)
+            // fecha_registro: fecha_registro,
+            es_gobernante: Boolean(es_gobernante)
         }
     })
 
@@ -190,7 +188,7 @@ const updatePersonajeReino = async (req, res) => {
         },
         data: {
             fecha_registro: fecha_registro ? parseInt(fecha_registro) : prev_personajeReino.fecha_registro,
-            es_gobernante: es_gobernante ? parseInt(es_gobernante) : prev_personajeReino.es_gobernante
+            es_gobernante: es_gobernante ? Boolean(es_gobernante) : prev_personajeReino.es_gobernante
         }
     })
 

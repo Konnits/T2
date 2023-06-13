@@ -21,14 +21,13 @@ const getDiplomacias = async (req, res) => {
 
         if(es_aliado && isNaN(parseInt(es_aliado))){
             res.status(400).json({error: 'Param es_aliado must be a boolean'})
-            return
         }
 
         const diplomacias = await prisma.diplomacias.findMany({
             where: {
                 id_reino_1: id_reino_1 ? parseInt(id_reino_1) : undefined,
                 id_reino_2: id_reino_2 ? parseInt(id_reino_2) : undefined,
-                es_aliado: es_aliado ? parseInt(es_aliado) : undefined
+                es_aliado: es_aliado ? Boolean(parseInt(es_aliado)) : undefined
             }
         })
 
@@ -108,7 +107,7 @@ const insertDiplomacia = async (req, res) => {
         data: {
             id_reino_1: parseInt(id_reino_1),
             id_reino_2: parseInt(id_reino_2),
-            es_aliado: parseInt(es_aliado)
+            es_aliado: Boolean(parseInt(es_aliado))
         }
     })
 
@@ -167,7 +166,7 @@ const updateDiplomacia = async (req, res) => {
             id_reino_2: parseInt(id_reino_2)
         },
         data: {
-            es_aliado: parseInt(es_aliado)
+            es_aliado: Boolean(parseInt(es_aliado))
         }
     })
 
