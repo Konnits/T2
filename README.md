@@ -42,6 +42,7 @@ Se solicitó la implementación de 4 EndPoints a parte de los **CRUD**. A contin
 
 Con esta ruta se puede obtener un listado de a lo más 5 personajes que poseen más fuerza. No tiene parámetros.
 
+**Tiempo de ejecución aproximada : 92ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/top5personajesconmasfuerza.png)
 
 ------
@@ -50,6 +51,7 @@ Con esta ruta se puede obtener un listado de a lo más 5 personajes que poseen m
 
 Con esta ruta se puede obtener el personaje que más autos posee.
 
+**Tiempo de ejecución aproximada : 16ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/personajeconmaskarts.png)
 
 ------
@@ -58,6 +60,7 @@ Con esta ruta se puede obtener el personaje que más autos posee.
 
 Con esta ruta se puede obtener la cantidad de personajes que posee un reino, para lo cual el parámetro **id_reino** es necesario.
 
+**Tiempo de ejecución aproximada : 19ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/cantidadhabitantes.png)
 
 ------
@@ -66,6 +69,7 @@ Con esta ruta se puede obtener la cantidad de personajes que posee un reino, par
 
 Con esta ruta se puede obtener un listado de los personajes que son gobernantes de un reino específico. Cuando este parámetro no se especifica, entonces se retornan todos los personajes que son gobernantes de algún reino.
 
+**Tiempo de ejecución aproximada : 27ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/gobernante.png)
 
 ------
@@ -83,6 +87,7 @@ Parámetros:
 - fecha_nacimiento: date (required)
 - objeto: varchar(45)
 
+**Tiempo de ejecución aproximada : 103ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/create_personajes.png)
 
 -----
@@ -98,6 +103,7 @@ Parámetros:
 - fecha_nacimiento: date - range
 - objeto: varchar(45)
 
+**Tiempo de ejecución aproximada : 29ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/get_personajes.png)
 
 -----
@@ -114,6 +120,7 @@ Parámetros:
 - fecha_nacimiento: date - range
 - objeto: varchar(45)
 
+**Tiempo de ejecución aproximada : 24ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/update_personajes.png)
 
 -----
@@ -126,7 +133,7 @@ Parámetros:
 
 - id: integer (required)
 
-
+**Tiempo de ejecución aproximada : 32ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/delete_personajes.png)
 
 -----
@@ -140,6 +147,7 @@ Parámetros:
 - descripcion: varchar(45) 
 - sueldo: integer (required)
 
+**Tiempo de ejecución aproximada : 36ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/create_trabajos.png)
 
 -----
@@ -153,6 +161,7 @@ Parámetros:
 - descripcion: varchar(45) 
 - sueldo: integer 
 
+**Tiempo de ejecución aproximada : 11ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/get_trabajos.png)
 
 -----
@@ -166,6 +175,7 @@ Parámetros:
 - descripcion: varchar(45) 
 - sueldo: integer 
 
+**Tiempo de ejecución aproximada : 222ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/update_trabajos.png)
 
 -----
@@ -178,7 +188,7 @@ Parámetros:
 
 - id: integer (required)
 
-
+**Tiempo de ejecución aproximada : 194ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/delete_trabajos.png)
 
 -----
@@ -196,6 +206,7 @@ Parámetros:
 - fecha_inicio: date (required) 
 - fecha_termino: date 
 
+**Tiempo de ejecución aproximada : 47ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/create_personaje_tiene_trabajo.png)
 
 -----
@@ -211,6 +222,7 @@ Parámetros:
 - fecha_inicio: date  
 - fecha_termino: date 
 
+**Tiempo de ejecución aproximada : 18ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/get_personaje_tiene_trabajo.png)
 
 -----
@@ -226,6 +238,7 @@ Parámetros:
 - fecha_inicio: date 
 - fecha_termino: date 
 
+**Tiempo de ejecución aproximada : 193ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/update_personaje_tiene_trabajo.png)
 
 -----
@@ -239,6 +252,7 @@ Parámetros:
 - id_trabajo: integer (required)
 - id_personaje: integer (required)
 
+**Tiempo de ejecución aproximada : 206ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/delete_personaje_tiene_trabajo.png)
 
 -----
@@ -256,6 +270,7 @@ Parámetros:
 - velocidad_maxima: integer 
 - id_personaje: integer 
 
+**Tiempo de ejecución aproximada : 44ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/create_karts.png)
 
 -----
@@ -271,6 +286,7 @@ Parámetros:
 - velocidad_maxima: integer 
 - id_personaje: integer 
 
+**Tiempo de ejecución aproximada : 14ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/get_karts.png)
 
 -----
@@ -287,6 +303,7 @@ Parámetros:
 - velocidad_maxima: integer 
 - id_personaje: integer 
 
+**Tiempo de ejecución aproximada : 31ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/update_karts.png)
 
 -----
@@ -300,6 +317,7 @@ Parámetros:
 
 - id: integer
 
+**Tiempo de ejecución aproximada : 24ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/delete_karts.png)
 
 -----
@@ -316,6 +334,7 @@ Parámetros:
 - ubicación: varchar(45) (required)
 - superficie: integer (required)
 
+**Tiempo de ejecución aproximada : 192ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/create_reinos.png)
 
 -----
@@ -331,6 +350,7 @@ Parámetros:
 - ubicación: varchar(45) 
 - superficie: integer 
 
+**Tiempo de ejecución aproximada : 159ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/get_reinos.png)
 
 -----
@@ -346,6 +366,7 @@ Parámetros:
 - ubicación: varchar(45) 
 - superficie: integer 
 
+**Tiempo de ejecución aproximada : 32ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/update_reinos.png)
 
 -----
@@ -358,6 +379,7 @@ Parámetros:
 
 - id: integer (required) 
 
+**Tiempo de ejecución aproximada : 33ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/delete_reinos.png)
 
 -----
@@ -374,6 +396,7 @@ Parámetros:
 - id_reino: integer (required)
 - es_gobernante: boolean (required)
 
+**Tiempo de ejecución aproximada : 20ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/create_personaje_habita_reino.png)
 
 -----
@@ -389,6 +412,7 @@ Parámetros:
 - fecha_registro: timestamp
 - es_gobernante: boolean 
 
+**Tiempo de ejecución aproximada : 8ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/get_personaje_habita_reino.png)
 
 -----
@@ -404,6 +428,7 @@ Parámetros:
 - id_reino: integer (required)
 - es_gobernante: boolean 
 
+**Tiempo de ejecución aproximada : 114ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/update_personaje_habita_reino.png)
 
 -----
@@ -417,6 +442,7 @@ Parámetros:
 - id_personaje: integer (required)
 - id_reino: integer (required)
 
+**Tiempo de ejecución aproximada : 100ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/delete_personaje_habita_reino.png)
 
 -----
@@ -431,6 +457,7 @@ Parámetros:
 
 - defensa: varchar(45) (required)
 
+**Tiempo de ejecución aproximada : 10ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/create_defensas.png)
 
 -----
@@ -444,6 +471,7 @@ Parámetros:
 - id: integer
 - defensa: varchar(45)
 
+**Tiempo de ejecución aproximada : 10ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/get_defensas.png)
 
 -----
@@ -458,6 +486,7 @@ Parámetros:
 - id: integer (required)
 - defensa: varchar(45) (required)
 
+**Tiempo de ejecución aproximada : 104ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/update_defensas.png)
 
 -----
@@ -470,6 +499,7 @@ Parámetros:
 
 - id: integer (required)
 
+**Tiempo de ejecución aproximada : 13ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/delete_defensas.png)
 
 -----
@@ -486,6 +516,7 @@ Parámetros:
 - id_defensa: int (required)
 - cantidad: int (required)
 
+**Tiempo de ejecución aproximada : 72ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/create_reino_tiene_defensa.png)
 
 -----
@@ -500,6 +531,7 @@ Parámetros:
 - id_defensa: int
 - cantidad: int
 
+**Tiempo de ejecución aproximada : 8ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/get_reino_tiene_defensa.png)
 
 -----
@@ -515,6 +547,7 @@ Parámetros:
 - id_defensa: int (required)
 - cantidad: int (required)
 
+**Tiempo de ejecución aproximada : 108ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/update_reino_tiene_defensa.png)
 
 -----
@@ -528,6 +561,7 @@ Parámetros:
 - id_reino: int (required)
 - id_defensa: int (required)
 
+**Tiempo de ejecución aproximada : 101ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/delete_reino_tiene_defensa.png)
 
 
@@ -545,6 +579,7 @@ Parámetros:
 - id_reino_2: int (required)
 - es_aliado: boolean (required)
 
+**Tiempo de ejecución aproximada : 29ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/create_diplomacias.png)
 
 -----
@@ -559,6 +594,7 @@ Parámetros:
 - id_reino_2: int
 - es_aliado: boolean
 
+**Tiempo de ejecución aproximada : 14ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/get_diplomacias.png)
 
 -----
@@ -574,6 +610,7 @@ Parámetros:
 - id_reino_2: int (required)
 - es_aliado: boolean (required)
 
+**Tiempo de ejecución aproximada : 110ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/update_diplomacias.png)
 
 -----
@@ -587,6 +624,7 @@ Parámetros:
 - id_reino_1: int (required)
 - id_reino_2: int (required)
 
+**Tiempo de ejecución aproximada : 106ms**
 ![](https://github.com/Konnits/T2/blob/main/Images/delete_diplomacias.png)
 
 -----
