@@ -239,8 +239,10 @@ const deletePersonajeReino = async (req, res) => {
 
     const existing_personajeReino = await prisma.personaje_habita_reino.findUnique({
         where: {
-            id_personaje: parseInt(id_personaje),
-            id_reino: parseInt(id_reino)
+            id_personaje_id_reino: {
+                id_personaje: parseInt(id_personaje),
+                id_reino: parseInt(id_reino)
+            }
         }
     })
 
